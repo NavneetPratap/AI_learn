@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: ai-learning-platform
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn ai_learning_platform.wsgi
+    plan: free
+    autoDeploy: true
+    previews:
+      generation: automatic
